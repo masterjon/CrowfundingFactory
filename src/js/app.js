@@ -404,7 +404,7 @@ function displayConstraints(data,campaignId,investor,account,campaignTemplate){
   campaignTemplate.find('.campaign-rate').text(data[7]+"%");
   campaignTemplate.find('.campaign-debt').text(web3.fromWei(data[10]/multiplier));
   campaignTemplate.find('.refund-deadline').text(refundDeadline.getDate()+" "+monthNames[(refundDeadline.getMonth())]+" "+refundDeadline.getFullYear());
-  campaignTemplate.find('.beneficiary-address').text(data[4]);
+  campaignTemplate.find('.beneficiary-address').html('<a href="#" data-title="Beneficiary address: '+data[4]+'" class="fas fa-address-card ml-1" data-toggle="tooltip" data-placement="top"></a>');
   campaignTemplate.find('.btn-contribute').text("Contribute");
   campaignTemplate.find('.btn-contribute').val(campaignId);
   campaignTemplate.find('.btn-goalReached').val(campaignId);

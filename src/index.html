@@ -137,7 +137,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-12">
-                <h3 class="card-title campaign-name float-left m-0" >Campaign name</h3>
+<h3 class="card-title campaign-name float-left m-0" >Campaign name</h3><span class="beneficiary-address"></span>
                 <p class="campaign-status float-right"><span class="badge"></span></p>
                 
               </div>
@@ -173,6 +173,7 @@
                 </tr>
               </tbody>
             </table>
+           
             <input type="hidden" class="campaign-term-value" name="" id="">
             <div class="row justify-content-between">
               <div class="input-group col-6 paydebt-container">
@@ -191,11 +192,11 @@
 
             <p class="visible-refunding mt-2 mb-0">Refund deadline: <strong><span class="refund-deadline"></span></strong> </p>
           </div>
-          <hr>
+          
           <div class="card-body">
             <div class="row">
               <div class="col-6 beneficiary-container">
-                <h5>Beneficiary </h5>
+                <h5><i class="fas fa-user-circle"></i> Beneficiary </h5>
                 <p class="visible-active">
                   <button class="btn btn-outline-dark btn-goalReached" type="button" data-id="0" data-toggle="tooltip" data-placement="top"  title="You created this campaign, if the goal has reached, click here to change the status">Goal reached</button>
                 </p>
@@ -207,7 +208,7 @@
                 </p>
               </div>
               <div class="col-6 investor-container">
-                <h5>Investor</h5>
+                <h5><i class="fas fa-hand-holding-usd"></i> Investor</h5>
                 <p class="visible-failed"><button class="btn btn-outline-dark btn-refund" type="button" data-action="refund" >Claim refund</button></p>
                 
                 <p class="visible-terminated visible-refunding"><button class="btn btn-outline-success btn-shares" type="button" data-action="shares" data-toggle="tooltip" data-placement="top"  title="You have invested in this successful campaign, if there is balance to whitdraw, claim your share 🤑">Claim shares</button></p>
@@ -221,7 +222,8 @@
               </div>
               
             </div>
-            <small data-toggle="tooltip" data-placement="top"  title="Beneficiary address (the creator of the campaign)">Address: <span class="beneficiary-address "></span></small>
+            
+            
             
           </div>
        

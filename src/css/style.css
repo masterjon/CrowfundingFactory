@@ -33,6 +33,12 @@ h1 span{
     right:1rem;
     position: fixed;
 }
+.beneficiary-container,.investor-container{
+    text-align: center;
+}
+.beneficiary-container{
+    border-right:  1px solid rgba(0,0,0,.1);
+}
 .visible-active,
 .visible-refunding,
 .visible-terminated,
@@ -50,9 +56,14 @@ h1 span{
 }
 
 .is-investor .investor-container,
-.is-beneficiary .beneficiary-container,
-.goal-reached .btn-goalReached{
+.is-beneficiary .beneficiary-container{
     display: block;
+}
+.goal-reached .btn-goalReached{
+    display: inline-block;
+}
+.beneficiary-address a{
+    color: inherit;
 }
 
 .paydebt-container{
