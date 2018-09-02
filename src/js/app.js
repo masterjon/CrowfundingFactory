@@ -114,11 +114,19 @@ App = {
 
   displayCampaigns: function(account) {
     var adoptionInstance;
+    
+    
+    
     web3.eth.getAccounts(function(error, accounts){
       if(error){
         console.log(error);
       }
       var account = accounts[0];
+      console.log(account)
+      web3.eth.getBalance(account,'latest',function(error,balance){
+      console.log(web3.fromWei(balance.toNumber()))
+    })
+      
       App.contracts.CrowdfundingFactory.deployed().then(function(instance){
         crowdfundingInstance = instance;
         return crowdfundingInstance.owner.call();
@@ -182,6 +190,7 @@ App = {
         crowdfundingInstance = instance;
         return crowdfundingInstance.contribute(campaignId, {from: account, value: web3.toWei(contributeAmount)});
       }).then(function(result){
+        console.log(result)
         return App.displayCampaigns();
       }).catch(function(err){
         console.log(err.message);
@@ -207,7 +216,7 @@ App = {
 
       App.contracts.CrowdfundingFactory.deployed().then(function(instance){
         crowdfundingInstance = instance;
-        return crowdfundingInstance.goalReached(campaignId,{from: account,gas:dameMasGasolina})
+        return crowdfundingInstance.goalReached(campaignId,{from: account})
       }).then(function(result){
         return App.displayCampaigns();
       }).catch(function(err){
@@ -253,7 +262,7 @@ App = {
 
       App.contracts.CrowdfundingFactory.deployed().then(function(instance){
         crowdfundingInstance = instance;
-        return crowdfundingInstance.payDebt(campaignId, {from: account,value: web3.toWei(amount),gas:dameMasGasolina});
+        return crowdfundingInstance.payDebt(campaignId, {from: account,value: web3.toWei(amount)});
       }).then(function(result){
         return App.displayCampaigns();
       }).catch(function(err){
